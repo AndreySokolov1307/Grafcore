@@ -1,10 +1,3 @@
-//
-//  AppDelegate.swift
-//  LogIn
-//
-//  Created by Андрей Соколов on 16.02.2024.
-//
-
 import UIKit
 
 @main
