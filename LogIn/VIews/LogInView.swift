@@ -8,7 +8,6 @@ enum FocusedField {
 struct LogInView: View {
     @State private var emailAddress = ""
     @State private var password = ""
-    @State var showPassword: Bool = false
     @FocusState var focusField: FocusedField?
     
     var body: some View {
@@ -30,21 +29,7 @@ struct LogInView: View {
                 }
                 .padding(.bottom, 4)
                 .padding(.top, 32)
-                TextField(
-                    UIConstants.strings.emailAddressPlaceholder,
-                    text: $emailAddress)
-                .tint(Color(UIConstants.colors.grey2!))
-                .bold()
-                .padding(.horizontal, 16)
-                .frame(height: 49)
-                .background(Color(UIConstants.colors.greyBackground!))
-                .cornerRadius(8)
-                .padding(.horizontal, 25)
-                .overlay {
-                    RoundedRectangle(cornerRadius: 8)
-                        .stroke(Color(UIConstants.colors.grey2!), lineWidth: 1)
-                        .padding(.horizontal, 24)
-                }
+                EmailInputView(emailAddress: $emailAddress)
                 .padding(.bottom, 16)
                 HStack {
                     Text(UIConstants.strings.passwordTitle)
@@ -53,7 +38,7 @@ struct LogInView: View {
                     Spacer()
                 }
                 .padding(.bottom, 4)
-                CustomInputView(text: $password)
+                PasswordInputView(password: $password)
                 Button {
                     print("continue")
                 } label: {
@@ -89,56 +74,5 @@ struct LogInView: View {
 struct LogInView_Previews: PreviewProvider {
     static var previews: some View {
         LogInView()
-    }
-}
-
-enum FieldType {
-    case secure
-    case plain
-}
-
-struct CustomInputView: View {
-    @Binding  var text: String
-    @State private var isSecured: Bool = true
-    @FocusState var focus: FieldType?
-    
-    var body: some View {
-        HStack(spacing: 0) {
-            Group {
-                if isSecured {
-                    SecureField(
-                        UIConstants.strings.passwordPlaceholder,
-                        text: $text)
-                    .tint(Color(UIConstants.colors.grey2!))
-                    .bold()
-                    .padding(.horizontal, 16)
-                    .frame(height: 49)
-                } else {
-                    TextField(
-                        UIConstants.strings.passwordPlaceholder,
-                        text: $text)
-                    .tint(Color(UIConstants.colors.grey2!))
-                    .bold()
-                    .padding(.horizontal, 16)
-                    .frame(height: 49)
-                }
-                Button {
-                    isSecured.toggle()
-                    focus = isSecured ? .secure : .plain
-                } label: {
-                    Image(uiImage: UIConstants.images.eyeSlash!)
-                        .renderingMode(.original)
-                        .padding(.horizontal, 16)
-                }
-            }
-        }
-        .background(Color(UIConstants.colors.greyBackground!))
-        .padding(.horizontal, 25)
-        .cornerRadius(8)
-        .overlay {
-            RoundedRectangle(cornerRadius: 8)
-                .stroke(Color(UIConstants.colors.grey2!), lineWidth: 1)
-                .padding(.horizontal, 24)
-        }
     }
 }
