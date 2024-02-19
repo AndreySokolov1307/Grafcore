@@ -1,11 +1,11 @@
 import UIKit
 
-final class LogInViewController: UIViewController {
+final class WelocomeViewController: UIViewController {
     
-    private var logInView: LogInView!
+    private var logInView: WelcomeView!
     
     override func loadView() {
-        logInView = LogInView()
+        logInView = WelcomeView()
         self.view = logInView
     }
 

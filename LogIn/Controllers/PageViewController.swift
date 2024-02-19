@@ -1,4 +1,5 @@
 import UIKit
+import SwiftUI
 
 final class PageViewController: UIPageViewController {
     
@@ -84,7 +85,12 @@ final class PageViewController: UIPageViewController {
     }
     
     @objc func didTapNextButton() {
-        goToNextPage()
+        if customPageControl.currentIndex == customPageControl.lastIndex {
+            let vc = UIHostingController(rootView: LogInView())
+            self.navigationController?.present(vc, animated: true)
+        } else {
+            goToNextPage()
+        }
     }
     
     @objc func didTapSkipButton() {
@@ -163,7 +169,7 @@ extension PageViewController {
     }
     
     func checkIfLastIndex(_ index: Int) {
-        if index == customPageControl.controls.count - 1 {
+        if index == customPageControl.lastIndex {
             nextButton.setTitle(UIConstants.strings.getStartedTitle, for: .normal)
             skipButton.isHidden = true
         } else {

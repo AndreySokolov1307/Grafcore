@@ -1,73 +1,144 @@
-import UIKit
-import SnapKit
+import SwiftUI
 
+enum FocusedField {
+    case email
+    case password
+}
 
-class LogInView: UIView {
+struct LogInView: View {
+    @State private var emailAddress = ""
+    @State private var password = ""
+    @State var showPassword: Bool = false
+    @FocusState var focusField: FocusedField?
     
-    let logoImageView: UIImageView = {
-        let imageView = UIImageView()
-        imageView.image = UIConstants.images.logInTitle
-        imageView.translatesAutoresizingMaskIntoConstraints = false
-        return imageView
-    }()
-    
-    let personImageView: UIImageView = {
-        let imageView = UIImageView()
-        imageView.image = UIConstants.images.logInPerson
-        imageView.translatesAutoresizingMaskIntoConstraints = false
-        return imageView
-    }()
-    
-    // TODO: - add Noto Sans font
-    let logInButton: UIButton = {
-       let button = UIButton()
-        button.backgroundColor = UIConstants.colors.cerisePink
-        button.setTitle(UIConstants.strings.logInButtonTitle, for: .normal)
-        button.layer.cornerRadius = 8
-        button.layer.shadowOffset = CGSize(width: 0, height: 3)
-        button.layer.shadowRadius = 1
-        button.layer.shadowColor = UIConstants.colors.shadowGrey?.cgColor
-        button.layer.shadowOpacity = 0.6
-        
-        button.translatesAutoresizingMaskIntoConstraints = false
-        return button
-    }()
-
-    
-    override init(frame: CGRect) {
-        super.init(frame: frame)
-        setupLayout()
-    }
-    
-    required init?(coder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
-    }
-    
-    private func setupLayout() {
-        backgroundColor = .white
-        addSubview(logoImageView)
-        addSubview(personImageView)
-        addSubview(logInButton)
-        addSubview(logInButton)
-        
-        logoImageView.snp.makeConstraints { make in
-            make.top.equalToSuperview().inset(162)
-            make.centerX.equalToSuperview()
-            make.height.equalTo(37)
-            make.width.equalTo(172)
+    var body: some View {
+        NavigationStack {
+            VStack(spacing: 0) {
+                Image(uiImage: UIConstants.images.logInTitle!)
+                    .resizable()
+                    .frame(width: 172, height: 37)
+                    .padding(.top, 106)
+                Text(UIConstants.strings.greetingsTitle)
+                    .font(.system(size: 24,weight: .bold))
+                    .foregroundColor(Color(UIConstants.colors.grey!))
+                    .padding(.top, 16)
+                HStack {
+                    Text(UIConstants.strings.emailAddressTitle)
+                        .padding(.horizontal, 24)
+                        .font(.system(size: 16))
+                    Spacer()
+                }
+                .padding(.bottom, 4)
+                .padding(.top, 32)
+                TextField(
+                    UIConstants.strings.emailAddressPlaceholder,
+                    text: $emailAddress)
+                .tint(Color(UIConstants.colors.grey2!))
+                .bold()
+                .padding(.horizontal, 16)
+                .frame(height: 49)
+                .background(Color(UIConstants.colors.greyBackground!))
+                .cornerRadius(8)
+                .padding(.horizontal, 25)
+                .overlay {
+                    RoundedRectangle(cornerRadius: 8)
+                        .stroke(Color(UIConstants.colors.grey2!), lineWidth: 1)
+                        .padding(.horizontal, 24)
+                }
+                .padding(.bottom, 16)
+                HStack {
+                    Text(UIConstants.strings.passwordTitle)
+                        .padding(.horizontal, 24)
+                        .font(.system(size: 16))
+                    Spacer()
+                }
+                .padding(.bottom, 4)
+                CustomInputView(text: $password)
+                Button {
+                    print("continue")
+                } label: {
+                    Text(UIConstants.strings.continueButtonTitle)
+                        .foregroundColor(.white)
+                        .font(.system(size: 18,weight: .bold))
+                        .frame(maxWidth: .infinity)
+                        .frame(height: 49)
+                }
+                .background(content: {
+                    Color(UIConstants.colors.cerisePink3!)
+                        .cornerRadius(8)
+                        .shadow(color: Color(UIConstants.colors.greyShadow!),
+                                radius: 2, x: 0, y: 3)
+                })
+                .padding([.horizontal, .top], 24)
+                .padding(.bottom, 12)
+                .cornerRadius(8)
+                Button {
+                    print("change password")
+                } label: {
+                    Text(UIConstants.strings.changePasswordButtonTitle)
+                        .font(.system(size: 16, weight: .bold))
+                        .foregroundColor(Color(UIConstants.colors.deepViolet!))
+                }
+                .padding(.top, 12)
+                Spacer()
+            }
         }
-        
-        personImageView.snp.makeConstraints { make in
-            make.top.equalToSuperview().inset(305)
-            make.centerX.equalToSuperview()
-            make.height.equalTo(138)
-            make.width.equalTo(164)
+    }
+}
+
+struct LogInView_Previews: PreviewProvider {
+    static var previews: some View {
+        LogInView()
+    }
+}
+
+enum FieldType {
+    case secure
+    case plain
+}
+
+struct CustomInputView: View {
+    @Binding  var text: String
+    @State private var isSecured: Bool = true
+    @FocusState var focus: FieldType?
+    
+    var body: some View {
+        HStack(spacing: 0) {
+            Group {
+                if isSecured {
+                    SecureField(
+                        UIConstants.strings.passwordPlaceholder,
+                        text: $text)
+                    .tint(Color(UIConstants.colors.grey2!))
+                    .bold()
+                    .padding(.horizontal, 16)
+                    .frame(height: 49)
+                } else {
+                    TextField(
+                        UIConstants.strings.passwordPlaceholder,
+                        text: $text)
+                    .tint(Color(UIConstants.colors.grey2!))
+                    .bold()
+                    .padding(.horizontal, 16)
+                    .frame(height: 49)
+                }
+                Button {
+                    isSecured.toggle()
+                    focus = isSecured ? .secure : .plain
+                } label: {
+                    Image(uiImage: UIConstants.images.eyeSlash!)
+                        .renderingMode(.original)
+                        .padding(.horizontal, 16)
+                }
+            }
         }
-        
-        logInButton.snp.makeConstraints { make in
-            make.top.equalToSuperview().inset(529)
-            make.left.right.equalToSuperview().inset(24)
-            make.height.equalTo(49)
+        .background(Color(UIConstants.colors.greyBackground!))
+        .padding(.horizontal, 25)
+        .cornerRadius(8)
+        .overlay {
+            RoundedRectangle(cornerRadius: 8)
+                .stroke(Color(UIConstants.colors.grey2!), lineWidth: 1)
+                .padding(.horizontal, 24)
         }
     }
 }

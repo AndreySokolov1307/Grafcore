@@ -12,11 +12,23 @@ class UIConstants {
         static let onboardingTwoMessage = "Pay Bills such as Water bill, Electricity,\n TV subscriptions etc.\n Buy airtime & bundles"
         static let onboardingThreeTitle = "Pay Merchants"
         static let onboardingThreeMessage = "Pay by Phone at merchants with\n Graftcore accounts even with\n insufficient balance"
+        static let emailAddressTitle = "Email address"
+        static let emailAddressPlaceholder = "youremail@domain.com"
+        static let passwordTitle = "Password"
+        static let passwordPlaceholder = "placeholder"
+        static let continueButtonTitle = "Continue"
+        static let changePasswordButtonTitle = "Change Password"
+        static let greetingsTitle = "Hello there!"
     }
 
     enum colors {
         static let cerisePink = UIColor(named: "cerisePink")
-        static let shadowGrey = UIColor(named: "shadowGrey")
+        static let cerisePink3 = UIColor(named: "cerisePink3")
+        static let greyShadow = UIColor(named: "greyShadow")
+        static let greyBackground = UIColor(named: "greyBackground")
+        static let grey = UIColor(named: "grey")
+        static let grey2 = UIColor(named: "grey2")
+        static let deepViolet = UIColor(named: "deepViolet")
     }
     
     enum images {
@@ -25,6 +37,7 @@ class UIConstants {
         static let sendMoney = UIImage(named: "sendMoney")
         static let payBills = UIImage(named: "payBills")
         static let payMerchants = UIImage(named: "payMerchants")
+        static let eyeSlash = UIImage(named: "eyeSlash")
     }
     
     enum numbers {

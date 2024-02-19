@@ -1,7 +1,7 @@
 import UIKit
 import SnapKit
 
-class CustomPageControll: UIPageControl {
+class CustomPageControll: UIView {
     
     let leftContol: CustomControll = {
         let control = CustomControll()
@@ -19,19 +19,22 @@ class CustomPageControll: UIPageControl {
     }()
     
     lazy var controls = [leftContol, midleControl, rightControl]
+    let lastIndex = 2
     
     var currentIndex = 0 {
         didSet {
             if currentIndex > 2 {
                 currentIndex = 0
             }
+            var selectedIndex = 0
             for (index, control) in controls.enumerated() {
-                if index == currentIndex {
-                    control.toSelectedState()
-                } else {
+                if index != currentIndex {
                     control.toNormalState()
+                } else {
+                    selectedIndex = index
                 }
             }
+            controls[selectedIndex].toSelectedState()
         }
     }
   
@@ -58,7 +61,6 @@ class CustomPageControll: UIPageControl {
     
     
     private func configure() {
-        numberOfPages = 3
         translatesAutoresizingMaskIntoConstraints = false
         addSubview(hStack)
         hStack.addArrangedSubview(leftContol)
