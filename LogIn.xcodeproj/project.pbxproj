@@ -10,6 +10,7 @@
 		321D6B372B8383DA005ADCCC /* PasswordInputView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 321D6B362B8383DA005ADCCC /* PasswordInputView.swift */; };
 		321D6B3A2B8385D5005ADCCC /* View+extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 321D6B392B8385D5005ADCCC /* View+extension.swift */; };
 		321D6B3E2B838945005ADCCC /* EmailInputView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 321D6B3D2B838945005ADCCC /* EmailInputView.swift */; };
+		321D6B412B838D6F005ADCCC /* NotoSans-VariableFont_wdth,wght.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 321D6B402B838D6F005ADCCC /* NotoSans-VariableFont_wdth,wght.ttf */; };
 		326B3C2D2B826A520031F888 /* LogInView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 326B3C2C2B826A520031F888 /* LogInView.swift */; };
 		326D21622B7F74F00057E19A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 326D21612B7F74F00057E19A /* AppDelegate.swift */; };
 		326D21642B7F74F00057E19A /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 326D21632B7F74F00057E19A /* SceneDelegate.swift */; };
@@ -31,6 +32,7 @@
 		321D6B362B8383DA005ADCCC /* PasswordInputView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PasswordInputView.swift; sourceTree = "<group>"; };
 		321D6B392B8385D5005ADCCC /* View+extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "View+extension.swift"; sourceTree = "<group>"; };
 		321D6B3D2B838945005ADCCC /* EmailInputView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmailInputView.swift; sourceTree = "<group>"; };
+		321D6B402B838D6F005ADCCC /* NotoSans-VariableFont_wdth,wght.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "NotoSans-VariableFont_wdth,wght.ttf"; sourceTree = "<group>"; };
 		326B3C2C2B826A520031F888 /* LogInView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogInView.swift; sourceTree = "<group>"; };
 		326D215E2B7F74F00057E19A /* LogIn.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LogIn.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		326D21612B7F74F00057E19A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -78,6 +80,14 @@
 			path = LogInView;
 			sourceTree = "<group>";
 		};
+		321D6B3F2B838D49005ADCCC /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+				321D6B402B838D6F005ADCCC /* NotoSans-VariableFont_wdth,wght.ttf */,
+			);
+			path = Fonts;
+			sourceTree = "<group>";
+		};
 		326D21552B7F74F00057E19A = {
 			isa = PBXGroup;
 			children = (
@@ -97,6 +107,7 @@
 		326D21602B7F74F00057E19A /* LogIn */ = {
 			isa = PBXGroup;
 			children = (
+				321D6B3F2B838D49005ADCCC /* Fonts */,
 				326D21772B7F75F90057E19A /* App */,
 				326D218D2B7FA6010057E19A /* Model */,
 				326D21752B7F75EC0057E19A /* VIews */,
@@ -232,6 +243,7 @@
 			files = (
 				326D216E2B7F74F50057E19A /* LaunchScreen.storyboard in Resources */,
 				326D216B2B7F74F50057E19A /* Assets.xcassets in Resources */,
+				321D6B412B838D6F005ADCCC /* NotoSans-VariableFont_wdth,wght.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

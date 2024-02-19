@@ -18,22 +18,20 @@ class WelcomeView: UIView {
         return imageView
     }()
     
-    // TODO: - add Noto Sans font
     let logInButton: UIButton = {
        let button = UIButton()
         button.backgroundColor = UIConstants.colors.cerisePink
         button.setTitle(UIConstants.strings.logInButtonTitle, for: .normal)
+        button.titleLabel?.font = UIFont(name: UIConstants.fontsNames.notoSansBold, size: 18)
         button.layer.cornerRadius = 8
         button.layer.shadowOffset = CGSize(width: 0, height: 3)
         button.layer.shadowRadius = 2
         button.layer.shadowColor = UIConstants.colors.greyShadow?.cgColor
         button.layer.shadowOpacity = 0.6
-        
         button.translatesAutoresizingMaskIntoConstraints = false
         return button
     }()
 
-    
     override init(frame: CGRect) {
         super.init(frame: frame)
         setupLayout()

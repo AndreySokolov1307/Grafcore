@@ -18,8 +18,7 @@ struct LogInView: View {
                     .frame(width: 172, height: 37)
                     .padding(.top, 106)
                 Text(UIConstants.strings.greetingsTitle)
-                    .font(.system(size: 24,weight: .bold))
-                    .foregroundColor(Color(UIConstants.colors.grey!))
+                    .font(.custom(UIConstants.fontsNames.notoSansBold, size: 24))
                     .padding(.top, 16)
                 HStack {
                     Text(UIConstants.strings.emailAddressTitle)
@@ -44,7 +43,7 @@ struct LogInView: View {
                 } label: {
                     Text(UIConstants.strings.continueButtonTitle)
                         .foregroundColor(.white)
-                        .font(.system(size: 18,weight: .bold))
+                        .font(.custom(UIConstants.fontsNames.notoSansBold, size: 18))
                         .frame(maxWidth: .infinity)
                         .frame(height: 49)
                 }
@@ -61,7 +60,7 @@ struct LogInView: View {
                     print("change password")
                 } label: {
                     Text(UIConstants.strings.changePasswordButtonTitle)
-                        .font(.system(size: 16, weight: .bold))
+                        .font(.custom(UIConstants.fontsNames.notoSansBold, size: 16))
                         .foregroundColor(Color(UIConstants.colors.deepViolet!))
                 }
                 .padding(.top, 12)

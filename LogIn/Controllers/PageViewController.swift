@@ -7,28 +7,26 @@ final class PageViewController: UIPageViewController {
         let button = UIButton()
         button.setTitle(UIConstants.strings.skipButtonTitle, for: .normal)
         button.setTitleColor(UIConstants.colors.cerisePink, for: .normal)
+        button.titleLabel?.font = UIFont(name: UIConstants.fontsNames.notoSansBold, size: 18)
         button.translatesAutoresizingMaskIntoConstraints = false
         return button
     }()
 
     let nextButton: UIButton = {
-        var configuration = UIButton.Configuration.plain()
-        configuration.background.backgroundColor = UIConstants.colors.cerisePink
-        configuration.baseForegroundColor = .white
-        configuration.title = UIConstants.strings.nextButtonTitle
-        configuration.contentInsets = NSDirectionalEdgeInsets(top: 12, leading: 20, bottom: 12, trailing: 20)
-        configuration.background.cornerRadius = 24
-        let button = UIButton(configuration: configuration)
+        let button = UIButton()
+        button.setTitle(UIConstants.strings.nextButtonTitle, for: .normal)
+        button.backgroundColor = UIConstants.colors.cerisePink
+        button.layer.cornerRadius = 24
+        button.titleLabel?.font = UIFont(name: UIConstants.fontsNames.notoSansBold, size: 18)
+        button.contentEdgeInsets = UIEdgeInsets(top: 12, left: 20, bottom: 12, right: 20)
         button.translatesAutoresizingMaskIntoConstraints = false
         return button
     }()
     
     let customPageControl = CustomPageControll()
-
     var pages = [OnboardingViewController]()
     let initialPageIndex = UIConstants.numbers.initialPageIndex
     let lastPageIndex = UIConstants.numbers.lastPageIndex
-    
     
     override func viewDidLoad() {
         super.viewDidLoad()

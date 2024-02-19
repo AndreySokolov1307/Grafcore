@@ -15,7 +15,7 @@ class UIConstants {
         static let emailAddressTitle = "Email address"
         static let emailAddressPlaceholder = "youremail@domain.com"
         static let passwordTitle = "Password"
-        static let passwordPlaceholder = "placeholder"
+        static let passwordPlaceholder = "password"
         static let continueButtonTitle = "Continue"
         static let changePasswordButtonTitle = "Change Password"
         static let greetingsTitle = "Hello there!"
@@ -28,6 +28,7 @@ class UIConstants {
         static let greyBackground = UIColor(named: "greyBackground")
         static let grey = UIColor(named: "grey")
         static let grey2 = UIColor(named: "grey2")
+        static let grey3 = UIColor(named: "grey3")
         static let deepViolet = UIColor(named: "deepViolet")
     }
     
@@ -38,6 +39,12 @@ class UIConstants {
         static let payBills = UIImage(named: "payBills")
         static let payMerchants = UIImage(named: "payMerchants")
         static let eyeSlash = UIImage(named: "eyeSlash")
+    }
+    
+    enum fontsNames {
+        static let notoSansRegular = "NotoSans-Regular"
+        static let notoSansLight = "NotoSans-Regular_Light"
+        static let notoSansBold = "NotoSans-Regular_Bold"
     }
     
     enum numbers {
