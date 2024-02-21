@@ -11,6 +11,10 @@
 		321D6B3A2B8385D5005ADCCC /* View+extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 321D6B392B8385D5005ADCCC /* View+extension.swift */; };
 		321D6B3E2B838945005ADCCC /* EmailInputView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 321D6B3D2B838945005ADCCC /* EmailInputView.swift */; };
 		321D6B412B838D6F005ADCCC /* NotoSans-VariableFont_wdth,wght.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 321D6B402B838D6F005ADCCC /* NotoSans-VariableFont_wdth,wght.ttf */; };
+		321D6B452B8504AE005ADCCC /* MainButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 321D6B442B8504AE005ADCCC /* MainButton.swift */; };
+		321D6B472B851027005ADCCC /* MainButtonViewRepresentable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 321D6B462B851027005ADCCC /* MainButtonViewRepresentable.swift */; };
+		3223C92E2B8609CD00EA2C2B /* LogInViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3223C92D2B8609CD00EA2C2B /* LogInViewModel.swift */; };
+		3223C9322B864A4A00EA2C2B /* Validator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3223C9312B864A4A00EA2C2B /* Validator.swift */; };
 		326B3C2D2B826A520031F888 /* LogInView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 326B3C2C2B826A520031F888 /* LogInView.swift */; };
 		326D21622B7F74F00057E19A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 326D21612B7F74F00057E19A /* AppDelegate.swift */; };
 		326D21642B7F74F00057E19A /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 326D21632B7F74F00057E19A /* SceneDelegate.swift */; };
@@ -33,6 +37,10 @@
 		321D6B392B8385D5005ADCCC /* View+extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "View+extension.swift"; sourceTree = "<group>"; };
 		321D6B3D2B838945005ADCCC /* EmailInputView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmailInputView.swift; sourceTree = "<group>"; };
 		321D6B402B838D6F005ADCCC /* NotoSans-VariableFont_wdth,wght.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "NotoSans-VariableFont_wdth,wght.ttf"; sourceTree = "<group>"; };
+		321D6B442B8504AE005ADCCC /* MainButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainButton.swift; sourceTree = "<group>"; };
+		321D6B462B851027005ADCCC /* MainButtonViewRepresentable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainButtonViewRepresentable.swift; sourceTree = "<group>"; };
+		3223C92D2B8609CD00EA2C2B /* LogInViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogInViewModel.swift; sourceTree = "<group>"; };
+		3223C9312B864A4A00EA2C2B /* Validator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Validator.swift; sourceTree = "<group>"; };
 		326B3C2C2B826A520031F888 /* LogInView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogInView.swift; sourceTree = "<group>"; };
 		326D215E2B7F74F00057E19A /* LogIn.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LogIn.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		326D21612B7F74F00057E19A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -163,6 +171,8 @@
 			isa = PBXGroup;
 			children = (
 				326D218F2B7FA61A0057E19A /* Onboarding.swift */,
+				3223C92D2B8609CD00EA2C2B /* LogInViewModel.swift */,
+				3223C9312B864A4A00EA2C2B /* Validator.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -173,6 +183,8 @@
 				321D6B3B2B838891005ADCCC /* LogInView */,
 				326D21962B7FD4B00057E19A /* ControlButton.swift */,
 				32C3C00A2B80D517001A2665 /* CustomPageControl.swift */,
+				321D6B442B8504AE005ADCCC /* MainButton.swift */,
+				321D6B462B851027005ADCCC /* MainButtonViewRepresentable.swift */,
 			);
 			path = "Supplementary Views";
 			sourceTree = "<group>";
@@ -263,11 +275,15 @@
 				326D217C2B7F7A8C0057E19A /* UIConstants.swift in Sources */,
 				326D21882B7F9BE10057E19A /* OnboardingView.swift in Sources */,
 				326B3C2D2B826A520031F888 /* LogInView.swift in Sources */,
+				321D6B452B8504AE005ADCCC /* MainButton.swift in Sources */,
 				326D217A2B7F77360057E19A /* WelcomeView.swift in Sources */,
+				3223C92E2B8609CD00EA2C2B /* LogInViewModel.swift in Sources */,
+				3223C9322B864A4A00EA2C2B /* Validator.swift in Sources */,
 				321D6B3E2B838945005ADCCC /* EmailInputView.swift in Sources */,
 				326D21902B7FA61A0057E19A /* Onboarding.swift in Sources */,
 				326D21922B7FA8BF0057E19A /* OnboardingVIewController.swift in Sources */,
 				326D21642B7F74F00057E19A /* SceneDelegate.swift in Sources */,
+				321D6B472B851027005ADCCC /* MainButtonViewRepresentable.swift in Sources */,
 				32C3C00B2B80D517001A2665 /* CustomPageControl.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -407,12 +423,14 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 4A3Z74ZVFC;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = LogIn/Supporting/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -433,12 +451,14 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 4A3Z74ZVFC;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = LogIn/Supporting/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

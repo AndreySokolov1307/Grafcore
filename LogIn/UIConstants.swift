@@ -19,13 +19,16 @@ class UIConstants {
         static let continueButtonTitle = "Continue"
         static let changePasswordButtonTitle = "Change Password"
         static let greetingsTitle = "Hello there!"
+        static let invalidPassword = "Minimum 8 characters, at least 1 alphabet and 1 number"
     }
 
     enum colors {
         static let cerisePink = UIColor(named: "cerisePink")
         static let cerisePink3 = UIColor(named: "cerisePink3")
+        static let cerisePink5 = UIColor(named: "cerisePink5")
         static let greyShadow = UIColor(named: "greyShadow")
         static let greyBackground = UIColor(named: "greyBackground")
+        static let green = UIColor(named: "green")
         static let grey = UIColor(named: "grey")
         static let grey2 = UIColor(named: "grey2")
         static let grey3 = UIColor(named: "grey3")
@@ -39,6 +42,8 @@ class UIConstants {
         static let payBills = UIImage(named: "payBills")
         static let payMerchants = UIImage(named: "payMerchants")
         static let eyeSlash = UIImage(named: "eyeSlash")
+        static let failure = UIImage(named: "failure")
+        static let success = UIImage(named: "success")
     }
     
     enum fontsNames {

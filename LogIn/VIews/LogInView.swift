@@ -1,14 +1,8 @@
 import SwiftUI
 
-enum FocusedField {
-    case email
-    case password
-}
-
 struct LogInView: View {
-    @State private var emailAddress = ""
-    @State private var password = ""
-    @FocusState var focusField: FocusedField?
+    @ObservedObject var viewModel = LoginViewModel()
+    @State private var passwordIsValid = false
     
     var body: some View {
         NavigationStack {
@@ -22,42 +16,42 @@ struct LogInView: View {
                     .padding(.top, 16)
                 HStack {
                     Text(UIConstants.strings.emailAddressTitle)
-                        .padding(.horizontal, 24)
                         .font(.system(size: 16))
                     Spacer()
                 }
                 .padding(.bottom, 4)
                 .padding(.top, 32)
-                EmailInputView(emailAddress: $emailAddress)
+                EmailInputView(emailAddress: $viewModel.emailAddress,
+                               image: viewModel.emailImage,
+                               tintColor: viewModel.emailTintColor)
                 .padding(.bottom, 16)
                 HStack {
                     Text(UIConstants.strings.passwordTitle)
-                        .padding(.horizontal, 24)
                         .font(.system(size: 16))
                     Spacer()
                 }
                 .padding(.bottom, 4)
-                PasswordInputView(password: $password)
-                Button {
-                    print("continue")
-                } label: {
-                    Text(UIConstants.strings.continueButtonTitle)
-                        .foregroundColor(.white)
-                        .font(.custom(UIConstants.fontsNames.notoSansBold, size: 18))
-                        .frame(maxWidth: .infinity)
-                        .frame(height: 49)
+                PasswordInputView(password: $viewModel.password,
+                                  tintColor: viewModel.passwordTintColor)
+                if viewModel.passwordVaidation == .failure, viewModel.password != "" {
+                    HStack {
+                        Text(UIConstants.strings.invalidPassword)
+                            .font(.system(size: 16))
+                            .padding(.top, 4)
+                            .fixedSize(horizontal: false, vertical: true)
+                        Spacer()
+                    }
                 }
-                .background(content: {
-                    Color(UIConstants.colors.cerisePink3!)
-                        .cornerRadius(8)
-                        .shadow(color: Color(UIConstants.colors.greyShadow!),
-                                radius: 2, x: 0, y: 3)
+                MainButtonViewRepresentable(title: UIConstants.strings.continueButtonTitle,
+                                            color: UIConstants.colors.cerisePink3!, onTap: {
+                    viewModel.continueButtonTapped()
                 })
-                .padding([.horizontal, .top], 24)
+                .disabled( viewModel.canSubmit == .failure ? true : false)
+                .frame(height: 49)
+                .padding(.top, 24)
                 .padding(.bottom, 12)
-                .cornerRadius(8)
                 Button {
-                    print("change password")
+                    // ACTION
                 } label: {
                     Text(UIConstants.strings.changePasswordButtonTitle)
                         .font(.custom(UIConstants.fontsNames.notoSansBold, size: 16))
@@ -66,6 +60,8 @@ struct LogInView: View {
                 .padding(.top, 12)
                 Spacer()
             }
+            .padding(.horizontal, 24)
+            .keyboardAdaptive()
         }
     }
 }

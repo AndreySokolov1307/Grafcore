@@ -1,7 +1,6 @@
 import UIKit
 import SnapKit
 
-
 class WelcomeView: UIView {
     
     let logoImageView: UIImageView = {
@@ -18,19 +17,8 @@ class WelcomeView: UIView {
         return imageView
     }()
     
-    let logInButton: UIButton = {
-       let button = UIButton()
-        button.backgroundColor = UIConstants.colors.cerisePink
-        button.setTitle(UIConstants.strings.logInButtonTitle, for: .normal)
-        button.titleLabel?.font = UIFont(name: UIConstants.fontsNames.notoSansBold, size: 18)
-        button.layer.cornerRadius = 8
-        button.layer.shadowOffset = CGSize(width: 0, height: 3)
-        button.layer.shadowRadius = 2
-        button.layer.shadowColor = UIConstants.colors.greyShadow?.cgColor
-        button.layer.shadowOpacity = 0.6
-        button.translatesAutoresizingMaskIntoConstraints = false
-        return button
-    }()
+    let logInButton = MainButton(title: UIConstants.strings.logInButtonTitle,
+                                 color: UIConstants.colors.cerisePink!)
 
     override init(frame: CGRect) {
         super.init(frame: frame)
