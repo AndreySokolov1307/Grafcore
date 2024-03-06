@@ -33,7 +33,7 @@ class MainButton: UIButton {
     private func configure() {
        backgroundColor = color
        setTitle(title, for: .normal)
-       titleLabel?.font = UIFont(name: UIConstants.fontsNames.notoSansBold, size: 18)
+       titleLabel?.font = FontFamily.NotoSans.bold.font(size: 18)
        setTitleColor(.white, for: .normal)
        setTitleColor(UIConstants.colors.grey3, for: .disabled)
        layer.cornerRadius = 8

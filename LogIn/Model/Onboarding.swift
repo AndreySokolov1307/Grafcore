@@ -2,16 +2,16 @@ import UIKit
 
 class Onboarding {
      static let titles = [
-        UIConstants.strings.onboardingOneTitle,
-        UIConstants.strings.onboardingTwoTitle,
-        UIConstants.strings.onboardingThreeTitle]
+        Strings.onboardingOneTitle,
+        Strings.onboardingTwoTitle,
+        Strings.onboardingThreeTitle]
     static let subtitles = [
-        UIConstants.strings.onboardingOneMessage,
-        UIConstants.strings.onboardingTwoMessage,
-        UIConstants.strings.onboardingThreeMessage]
+        Strings.onboardingOneMessage,
+        Strings.onboardingTwoMessage,
+        Strings.onboardingThreeMessage]
     static let images = [
-        UIConstants.images.sendMoney!,
-        UIConstants.images.payBills!,
-        UIConstants.images.payMerchants!
+        Assets.Images.sendMoney.image,
+        Assets.Images.payBills.image,
+        Assets.Images.payMerchants.image
     ]
 }

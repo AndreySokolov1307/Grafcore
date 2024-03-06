@@ -1,0 +1,26 @@
+/* 
+  Localizable.strings
+  LogIn
+
+  Created by Андрей Соколов on 06.03.2024.
+  
+*/
+"logInButtonTitle" = "Log In";
+"skipButtonTitle" = "Skip";
+"nextButtonTitle" = "Next";
+"getStartedTitle" = "Get Started";
+"onboardingOneTitle" =  "Send Money";
+"onboardingOneMessage" = "Send money instantly from your\n Graftcore account to all networks and\n banks";
+"onboardingTwoTitle" = "Pay Bills";
+"onboardingTwoMessage" = "Pay Bills such as Water bill, Electricity,\n TV subscriptions etc.\n Buy airtime & bundles";
+"onboardingThreeTitle" = "Pay Merchants";
+"onboardingThreeMessage" = "Pay by Phone at merchants with\n Graftcore accounts even with\n insufficient balance";
+"emailAddressTitle" = "Email address";
+"emailAddressPlaceholder" = "youremail@domain.com";
+"passwordTitle" = "Password";
+"passwordPlaceholder" = "password";
+"continueButtonTitle" = "Continue";
+"changePasswordButtonTitle" = "Change Password";
+"greetingsTitle" = "Hello there!";
+"invalidPassword" = "Minimum 8 characters, at least 1 alphabet and 1 number";
+

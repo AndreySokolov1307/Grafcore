@@ -4,22 +4,22 @@ struct LogInView: View {
     @ObservedObject var viewModel = LoginViewModel()
     
     var logo: some View {
-            Image(uiImage: UIConstants.images.logInTitle!)
+        Image(asset: Assets.Images.logInTitle)
                 .resizable()
                 .frame(width: 172, height: 37)
                 .padding(.top, 106)
     }
     
     var greetings: some View {
-        Text(UIConstants.strings.greetingsTitle)
-            .font(.custom(UIConstants.fontsNames.notoSansBold, size: 24))
+        Text(Strings.greetingsTitle)
+            .font(FontFamily.NotoSans.bold.swiftUIFont(size: 24))
             .padding(.top, 16)
     }
     
     var emailInput: some View {
         VStack(spacing: 0) {
             HStack {
-                Text(UIConstants.strings.emailAddressTitle)
+                Text(Strings.emailAddressTitle)
                     .font(.system(size: 16))
                 Spacer()
             }
@@ -35,7 +35,7 @@ struct LogInView: View {
     var passwordInput: some View {
         VStack(spacing: 0) {
             HStack {
-                Text(UIConstants.strings.passwordTitle)
+                Text(Strings.passwordTitle)
                     .font(.system(size: 16))
                 Spacer()
             }
@@ -44,7 +44,7 @@ struct LogInView: View {
                               tintColor: viewModel.passwordTintColor)
             if viewModel.passwordVaidation == .failure, viewModel.password != "" {
                 HStack {
-                    Text(UIConstants.strings.invalidPassword)
+                    Text(Strings.invalidPassword)
                         .font(.system(size: 16))
                         .padding(.top, 4)
                         .fixedSize(horizontal: false, vertical: true)
@@ -55,7 +55,7 @@ struct LogInView: View {
     }
     
     var countinueButton: some View {
-        MainButtonViewRepresentable(title: UIConstants.strings.continueButtonTitle,
+        MainButtonViewRepresentable(title: Strings.continueButtonTitle,
                                     color: UIConstants.colors.cerisePink3!, onTap: {
             viewModel.continueButtonTapped()
         })
@@ -69,8 +69,8 @@ struct LogInView: View {
         Button {
             // ACTION
         } label: {
-            Text(UIConstants.strings.changePasswordButtonTitle)
-                .font(.custom(UIConstants.fontsNames.notoSansBold, size: 16))
+            Text(Strings.changePasswordButtonTitle)
+                .font(FontFamily.NotoSans.bold.swiftUIFont(size: 16))
                 .foregroundColor(Color(UIConstants.colors.deepViolet!))
         }
         .padding(.top, 12)

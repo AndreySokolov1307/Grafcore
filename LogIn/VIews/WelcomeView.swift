@@ -5,19 +5,19 @@ class WelcomeView: UIView {
     
     let logoImageView: UIImageView = {
         let imageView = UIImageView()
-        imageView.image = UIConstants.images.logInTitle
+        imageView.image = Assets.Images.logInTitle.image
         imageView.translatesAutoresizingMaskIntoConstraints = false
         return imageView
     }()
     
     let personImageView: UIImageView = {
         let imageView = UIImageView()
-        imageView.image = UIConstants.images.logInPerson
+        imageView.image = Assets.Images.logInPerson.image
         imageView.translatesAutoresizingMaskIntoConstraints = false
         return imageView
     }()
     
-    let logInButton = MainButton(title: UIConstants.strings.logInButtonTitle,
+    let logInButton = MainButton(title: Strings.logInButtonTitle,
                                  color: UIConstants.colors.cerisePink!)
 
     override init(frame: CGRect) {

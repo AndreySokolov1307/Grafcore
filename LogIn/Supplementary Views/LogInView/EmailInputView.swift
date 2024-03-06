@@ -12,7 +12,7 @@ struct EmailInputView: View {
     var body: some View {
         HStack(spacing: 0) {
             TextField(
-                UIConstants.strings.emailAddressPlaceholder,
+                Strings.emailAddressPlaceholder,
                 text: $emailAddress)
             .inputViewStyle
             if emailAddress != "" {
@@ -32,6 +32,6 @@ struct EmailInputView: View {
 
 struct EmailInputView_Previews: PreviewProvider {
     static var previews: some View {
-        EmailInputView(emailAddress: .constant(""), image: Image(uiImage: UIConstants.images.success!), tintColor: .green)
+        EmailInputView(emailAddress: .constant(""), image: Image(asset: Assets.Images.success), tintColor: .green)
     }
 }

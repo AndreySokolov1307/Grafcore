@@ -48,7 +48,7 @@ class LoginViewModel: ObservableObject {
     }
     
     var emailImage: Image {
-        return emailValidation == .success ? Image(uiImage: UIConstants.images.success!) : Image(uiImage: UIConstants.images.failure!)
+        return emailValidation == .success ? Image(asset: Assets.Images.success) : Image(asset: Assets.Images.failure)
     }
     
     func continueButtonTapped() {

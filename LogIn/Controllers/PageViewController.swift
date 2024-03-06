@@ -5,19 +5,19 @@ final class PageViewController: UIPageViewController {
     
     let skipButton: UIButton = {
         let button = UIButton()
-        button.setTitle(UIConstants.strings.skipButtonTitle, for: .normal)
+        button.setTitle(Strings.skipButtonTitle, for: .normal)
         button.setTitleColor(UIConstants.colors.cerisePink, for: .normal)
-        button.titleLabel?.font = UIFont(name: UIConstants.fontsNames.notoSansBold, size: 18)
+        button.titleLabel?.font = FontFamily.NotoSans.bold.font(size: 18)
         button.translatesAutoresizingMaskIntoConstraints = false
         return button
     }()
 
     let nextButton: UIButton = {
         let button = UIButton()
-        button.setTitle(UIConstants.strings.nextButtonTitle, for: .normal)
+        button.setTitle(Strings.skipButtonTitle, for: .normal)
         button.backgroundColor = UIConstants.colors.cerisePink
         button.layer.cornerRadius = 24
-        button.titleLabel?.font = UIFont(name: UIConstants.fontsNames.notoSansBold, size: 18)
+        button.titleLabel?.font = FontFamily.NotoSans.bold.font(size: 18)
         button.contentEdgeInsets = UIEdgeInsets(top: 12, left: 20, bottom: 12, right: 20)
         button.translatesAutoresizingMaskIntoConstraints = false
         return button
@@ -168,10 +168,10 @@ extension PageViewController {
     
     func checkIfLastIndex(_ index: Int) {
         if index == customPageControl.lastIndex {
-            nextButton.setTitle(UIConstants.strings.getStartedTitle, for: .normal)
+            nextButton.setTitle(Strings.getStartedTitle, for: .normal)
             skipButton.isHidden = true
         } else {
-            nextButton.setTitle(UIConstants.strings.nextButtonTitle, for: .normal)
+            nextButton.setTitle(Strings.nextButtonTitle, for: .normal)
             skipButton.isHidden = false
         }
     }

@@ -7,7 +7,7 @@ extension View {
             .bold()
             .padding(.horizontal, 16)
             .frame(height: 47)
-            .font(.custom(UIConstants.fontsNames.notoSansBold, size: 16))
+            .font(FontFamily.NotoSans.bold.swiftUIFont(size: 16))
     }
     
     var inputViewOverlayStyle: some View {

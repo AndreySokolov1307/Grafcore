@@ -13,7 +13,7 @@ class OnboardingView: UIView {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
         label.textAlignment = .center
-        label.font = UIFont(name: UIConstants.fontsNames.notoSansBold, size: 24)
+        label.font = FontFamily.NotoSans.bold.font(size: 24)
         return label
     }()
     
@@ -21,7 +21,7 @@ class OnboardingView: UIView {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
         label.textAlignment = .center
-        label.font = UIFont(name: UIConstants.fontsNames.notoSansLight, size: 18)
+        label.font = FontFamily.NotoSans.light.font(size: 18)
         label.numberOfLines = 0
         return label
     }()

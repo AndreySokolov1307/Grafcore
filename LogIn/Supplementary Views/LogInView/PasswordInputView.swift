@@ -10,13 +10,13 @@ struct PasswordInputView: View {
             Group {
                 if isSecured {
                     SecureField(
-                        UIConstants.strings.passwordPlaceholder,
+                        Strings.passwordPlaceholder,
                         text: $password)
                     .autocorrectionDisabled(true)
                     .inputViewStyle
                 } else {
                     TextField(
-                        UIConstants.strings.passwordPlaceholder,
+                        Strings.passwordPlaceholder,
                         text: $password)
                     .autocorrectionDisabled(true)
                     .inputViewStyle
@@ -24,7 +24,7 @@ struct PasswordInputView: View {
                 Button {
                     isSecured.toggle()
                 } label: {
-                    Image(uiImage: UIConstants.images.eyeSlash!)
+                    Image(asset: Assets.Images.eyeSlash)
                         .renderingMode(.original)
                         .padding(.horizontal, 16)
                 }
