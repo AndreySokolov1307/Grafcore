@@ -98,7 +98,7 @@ final class PageViewController: UIPageViewController {
     @objc func didTapControl(sender: CustomControll) {
         for (index, control) in customPageControl.controls.enumerated() {
             if control == sender {
-                goToSpecificPage(index: index , ofViewCOntrollers: pages)
+                goToSpecificPage(index: index, ofViewCOntrollers: pages)
             } else {
                 control.toNormalState()
             }

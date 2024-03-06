@@ -22,6 +22,7 @@ class UIConstants {
 //        static let invalidPassword = "Minimum 8 characters, at least 1 alphabet and 1 number"
 //    }
 
+    // might change it to swiftgen Colors
     enum colors {
         static let cerisePink = UIColor(named: "cerisePink")
         static let cerisePink3 = UIColor(named: "cerisePink3")
